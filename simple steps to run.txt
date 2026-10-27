@@ -1,0 +1,37 @@
+Step 1: Open PowerShell in the project folder
+
+cd "D:\HR Portal"
+
+Step 2: Check Python version
+
+python --version
+
+Step 3: Create a virtual environment
+
+python -m venv venv
+
+Step 4: Activate the virtual environment
+
+.\venv\Scripts\Activate.ps1
+
+Step 5: Upgrade pip
+
+python -m pip install --upgrade pip
+
+Step 6: Install project dependencies
+
+pip install -r requirements.txt
+
+Step 7: Check the database
+
+python check_db.py
+
+Step 8: Configure secrets locally (never commit your .env file)
+
+Copy-Item .env.example .env
+# Edit .env to add your Gemini API key and, optionally, SMTP settings.
+# Use a unique admin password of at least 12 characters if bootstrap admin is enabled.
+
+Step 9: Run TalentSphere AI
+
+python -m streamlit run app.py
